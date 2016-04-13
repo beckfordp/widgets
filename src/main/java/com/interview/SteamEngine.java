@@ -11,7 +11,7 @@ public class SteamEngine extends BaseEngine implements Engine {
     }
 
     @Override
-    List<FuelType> allowedFuel() {
+    protected List<FuelType> allowedFuel() {
         return allowedFuel;
     }
 }

@@ -53,5 +53,4 @@ public class WidgetMachineTest {
         WidgetMachine machine = new WidgetMachine(engine);
         assertThat(machine.produceWidgets(4), is(435*2));
     }
-
 }

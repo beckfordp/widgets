@@ -36,4 +36,11 @@ public class SteamEngineTest {
         engine.start();
     }
 
+    @Test(expected=IllegalStateException.class)
+    public void cannotStartIfFuelIsEmpty() {
+    Engine engine = new SteamEngine(FuelType.WOOD);
+        engine.start();
+    }
+
+
 }

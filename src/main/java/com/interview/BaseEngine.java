@@ -55,5 +55,5 @@ abstract public class BaseEngine {
         }
     }
 
-    abstract List<FuelType> allowedFuel() ;
+    abstract protected List<FuelType> allowedFuel() ;
 }

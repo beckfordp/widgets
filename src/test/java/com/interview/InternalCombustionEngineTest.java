@@ -36,4 +36,9 @@ public class InternalCombustionEngineTest {
         engine.start();
     }
 
+    @Test(expected=IllegalStateException.class)
+    public void cannotStartIfFuelIsEmpty() {
+        Engine engine = new InternalCombustionEngine(FuelType.PETROL);
+        engine.start();
+    }
 }
