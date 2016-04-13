@@ -53,4 +53,13 @@ public class WidgetMachineTest {
         WidgetMachine machine = new WidgetMachine(engine);
         assertThat(machine.produceWidgets(4), is(435*2));
     }
+
+    @Test
+    public void engineIsStoppedAfterProductionRun() {
+        Engine engine = new InternalCombustionEngine(FuelType.PETROL);
+        engine.fill(FuelType.PETROL, 1);
+        WidgetMachine machine = new WidgetMachine(engine);
+        machine.produceWidgets(1);
+        assertThat(engine.isRunning(), is(false));
+    }
 }
