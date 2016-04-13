@@ -4,13 +4,14 @@ import java.util.Arrays;
 import java.util.List;
 
 public class InternalCombustionEngine extends BaseEngine implements Engine {
-    List<FuelType> allowedFuel = Arrays.asList(FuelType.PETROL, FuelType.DIESEL);
+    private static final List<FuelType> allowedFuel = Arrays.asList(FuelType.PETROL, FuelType.DIESEL);
 
     public InternalCombustionEngine(FuelType requiredFuelType) {
-        if(allowedFuel.contains(requiredFuelType)) {
-            this.requiredFuelType = requiredFuelType;
-        }  else {
-            throw new IllegalArgumentException(requiredFuelType + " fuel is not allowed");
-        }
+        super(requiredFuelType);
+    }
+
+    @Override
+    List<FuelType> allowedFuel() {
+        return allowedFuel;
     }
 }

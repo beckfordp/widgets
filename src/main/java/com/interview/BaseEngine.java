@@ -1,12 +1,15 @@
 package com.interview;
 
-public class BaseEngine {
+import java.util.List;
+
+abstract public class BaseEngine {
     protected boolean running;
     protected int fuelLevel;
     protected FuelType requiredFuelType;
     private FuelType fuelType;
 
-    public BaseEngine() {
+    public BaseEngine(FuelType requiredFuelType) {
+        guardAgainstWrongFuel(requiredFuelType);
         fuelLevel = 0;
         running = false;
     }
@@ -42,4 +45,15 @@ public class BaseEngine {
     public FuelType getFuelType() {
         return requiredFuelType;
     }
+
+
+    protected void guardAgainstWrongFuel(FuelType requiredFuelType) {
+        if(allowedFuel().contains(requiredFuelType)) {
+            this.requiredFuelType = requiredFuelType;
+        }  else {
+            throw new IllegalArgumentException(requiredFuelType + " fuel is not allowed");
+        }
+    }
+
+    abstract List<FuelType> allowedFuel() ;
 }
