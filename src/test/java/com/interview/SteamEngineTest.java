@@ -24,21 +24,18 @@ public class SteamEngineTest {
 
     @Test(expected=IllegalArgumentException.class)
     public void cannotUsePetrolAsFuel() {
-        Engine engine = new SteamEngine(FuelType.PETROL);
-        engine.fill(FuelType.PETROL, 1);
-        engine.start();
+        new SteamEngine(FuelType.PETROL);
     }
 
     @Test(expected=IllegalArgumentException.class)
     public void cannotUseDieselAsFuel() {
-        Engine engine = new SteamEngine(FuelType.DIESEL);
-        engine.fill(FuelType.PETROL, 1);
-        engine.start();
+        new SteamEngine(FuelType.DIESEL);
+
     }
 
     @Test(expected=IllegalStateException.class)
     public void cannotStartIfFuelIsEmpty() {
-    Engine engine = new SteamEngine(FuelType.WOOD);
+        Engine engine = new SteamEngine(FuelType.WOOD);
         engine.start();
     }
 

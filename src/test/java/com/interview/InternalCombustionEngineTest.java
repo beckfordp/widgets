@@ -24,16 +24,12 @@ public class InternalCombustionEngineTest {
 
     @Test(expected=IllegalArgumentException.class)
     public void cannotUseWoodAsFuel() {
-        Engine engine = new InternalCombustionEngine(FuelType.WOOD);
-        engine.fill(FuelType.WOOD, 1);
-        engine.start();
+         new InternalCombustionEngine(FuelType.WOOD);
     }
 
     @Test(expected=IllegalArgumentException.class)
     public void cannotUseCoalAsFuel() {
-        Engine engine = new InternalCombustionEngine(FuelType.COAL);
-        engine.fill(FuelType.COAL, 1);
-        engine.start();
+        new InternalCombustionEngine(FuelType.COAL);
     }
 
     @Test(expected=IllegalStateException.class)
