@@ -37,4 +37,21 @@ public class WidgetMachineTest {
         WidgetMachine machine = new WidgetMachine(engine);
         assertThat(machine.produceWidgets(1), is(565));
     }
+
+    @Test
+    public void batchSizeForInternalCombustionEngineIs9() {
+        Engine engine = new InternalCombustionEngine(FuelType.PETROL);
+        engine.fill(FuelType.PETROL, 1);
+        WidgetMachine machine = new WidgetMachine(engine);
+        assertThat(machine.produceWidgets(18), is(900*2));
+    }
+
+    @Test
+    public void batchSizeForSteamEngineIs2() {
+        Engine engine = new SteamEngine(FuelType.WOOD);
+        engine.fill(FuelType.WOOD, 1);
+        WidgetMachine machine = new WidgetMachine(engine);
+        assertThat(machine.produceWidgets(4), is(435*2));
+    }
+
 }

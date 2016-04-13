@@ -1,7 +1,17 @@
 package com.interview;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class WidgetMachine {
     private Engine engine;
+
+    private static final Map<Class, Integer> batchSize = new HashMap<Class, Integer>();
+    static
+    {
+        batchSize.put(InternalCombustionEngine.class, 9);
+        batchSize.put(SteamEngine.class, 2);
+    }
 
     WidgetMachine(Engine engine)   {
         this.engine = engine;
@@ -36,7 +46,7 @@ public class WidgetMachine {
         }
 
         while (batch < quantity) {
-            batch = batch + 8;
+            batch = batch + batchSize.get(engine.getClass());
             batchCount++;
         }
 
