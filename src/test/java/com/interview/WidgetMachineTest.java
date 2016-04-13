@@ -29,4 +29,12 @@ public class WidgetMachineTest {
         WidgetMachine machine = new WidgetMachine(engine);
         assertThat(machine.produceWidgets(1), is(435));
     }
+
+    @Test
+    public void costPerBatchUsingCoal() {
+        Engine engine = new SteamEngine(FuelType.COAL);
+        engine.fill(FuelType.COAL, 1);
+        WidgetMachine machine = new WidgetMachine(engine);
+        assertThat(machine.produceWidgets(1), is(565));
+    }
 }

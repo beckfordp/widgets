@@ -1,5 +1,5 @@
 package com.interview;
 
 public enum FuelType {
-    PETROL, WOOD, DIESEL
+    PETROL, WOOD, COAL, DIESEL
 }

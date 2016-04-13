@@ -31,7 +31,9 @@ public class WidgetMachine {
             costPerBatch = 1200;
         } else if (engine.getFuelType() == FuelType.WOOD) {
             costPerBatch = 435;
-    }
+        } else if (engine.getFuelType() == FuelType.COAL) {
+            costPerBatch = 565;
+        }
 
         while (batch < quantity) {
             batch = batch + 8;
