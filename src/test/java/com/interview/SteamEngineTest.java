@@ -31,7 +31,7 @@ public class SteamEngineTest {
 
     @Test(expected=IllegalArgumentException.class)
     public void cannotUseDieselAsFuel() {
-        Engine engine = new SteamEngine(FuelType.PETROL);
+        Engine engine = new SteamEngine(FuelType.DIESEL);
         engine.fill(FuelType.PETROL, 1);
         engine.start();
     }
