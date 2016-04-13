@@ -1,10 +1,13 @@
 package com.interview;
 
 public class WidgetMachine {
-    private InternalCombustionEngine engine = new InternalCombustionEngine(FuelType.PETROL);
+    private InternalCombustionEngine engine;
+
+    WidgetMachine(InternalCombustionEngine engine)   {
+        this.engine = engine;
+    }
 
     public int produceWidgets(int quantity) {
-        engine.fill(FuelType.PETROL, 1);
         engine.start();
         int cost = 0;
 
