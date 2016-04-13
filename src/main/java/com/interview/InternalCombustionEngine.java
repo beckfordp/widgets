@@ -9,8 +9,6 @@ public class InternalCombustionEngine implements Engine {
 
     public InternalCombustionEngine(FuelType requiredFuelType) {
         this.requiredFuelType = requiredFuelType;
-        running = false;
-        fuelLevel = 0;
     }
 
     public void start() {

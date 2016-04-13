@@ -6,10 +6,9 @@ public class BaseEngine {
     protected FuelType requiredFuelType;
     private FuelType fuelType;
 
-    public BaseEngine(FuelType requiredFuelType) {
+    public BaseEngine() {
         fuelLevel = 0;
         running = false;
-        this.requiredFuelType = requiredFuelType;
     }
 
     public void start() {
