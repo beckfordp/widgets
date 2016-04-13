@@ -1,9 +1,9 @@
 package com.interview;
 
 public class WidgetMachine {
-    private InternalCombustionEngine engine;
+    private Engine engine;
 
-    WidgetMachine(InternalCombustionEngine engine)   {
+    WidgetMachine(Engine engine)   {
         this.engine = engine;
     }
 
@@ -26,10 +26,12 @@ public class WidgetMachine {
         int costPerBatch = 0;
 
         if (engine.getFuelType() == FuelType.PETROL) {
-            costPerBatch = 9;
+            costPerBatch = 900;
         } else if (engine.getFuelType() == FuelType.DIESEL) {
-            costPerBatch = 12;
-        }
+            costPerBatch = 1200;
+        } else if (engine.getFuelType() == FuelType.WOOD) {
+            costPerBatch = 435;
+    }
 
         while (batch < quantity) {
             batch = batch + 8;

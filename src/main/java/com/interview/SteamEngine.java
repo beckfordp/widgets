@@ -1,13 +1,13 @@
 package com.interview;
 
-public class InternalCombustionEngine implements Engine {
+public class SteamEngine implements Engine {
 
     private boolean running;
     private int fuelLevel;
     private FuelType requiredFuelType;
     private FuelType fuelType;
 
-    public InternalCombustionEngine(FuelType requiredFuelType) {
+    public SteamEngine(FuelType requiredFuelType) {
         this.requiredFuelType = requiredFuelType;
         running = false;
         fuelLevel = 0;
@@ -32,11 +32,9 @@ public class InternalCombustionEngine implements Engine {
     public void fill(FuelType fuelType, int fuelLevel) {
         if (fuelLevel >= 0 && fuelLevel <= 100) {
             this.fuelLevel = fuelLevel;
-        }
-        else if (fuelLevel > 100) {
+        } else if (fuelLevel > 100) {
             this.fuelLevel = 100;
-        }
-        else {
+        } else {
             this.fuelLevel = 0;
         }
 
@@ -44,6 +42,6 @@ public class InternalCombustionEngine implements Engine {
     }
 
     public FuelType getFuelType() {
-        return  requiredFuelType;
+        return requiredFuelType;
     }
 }
