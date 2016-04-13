@@ -47,7 +47,7 @@ abstract public class BaseEngine {
     }
 
 
-    protected void guardAgainstWrongFuel(FuelType requiredFuelType) {
+    private void guardAgainstWrongFuel(FuelType requiredFuelType) {
         if(allowedFuel().contains(requiredFuelType)) {
             this.requiredFuelType = requiredFuelType;
         }  else {
